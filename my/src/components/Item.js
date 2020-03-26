@@ -1,10 +1,11 @@
 import React from 'react';
-import items from '../data';
+
 
 export default function Item(props) {
-    console.log(props.match.params.id)
-    const item = items.find((product) => {
-        return product.id === Number(props.match.params.id);
+    // console.log(props)
+    // console.log(props.match.params.itemId)
+    const item = props.items.find((product) => {
+        return `${product.id}` === props.match.params.itemId;
     });
     return (
         <div className='item-wrapper'>

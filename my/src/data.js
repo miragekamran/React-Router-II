@@ -37,7 +37,7 @@ export default [
     {
       name: 'Yoga Joes',
       id: 3,
-      price: 25.0,
+      price: 6.15,
       imageUrl:
         'https://www.uncommongoods.com/images/items/43200/43212_1_360px.jpg',
       description:

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, NavLink } from 'react-router-dom';
 import ItemShipping from '../components/ItemShippping';
 import ItemDescription from '../components/ItemDescription';
 
@@ -25,20 +25,20 @@ export default function Item(props) {
                 </div>
             </div>
             <nav className='item-sub-nav'>
-                <Link to={`/shop/${item.id}/description`}>Description</Link>
-                <Link to={`/shop/${item.id}/shipping`}>Shipping</Link>
+                <NavLink to={`/shop/${item.id}/description`}>Description</NavLink>
+                <NavLink to={`/shop/${item.id}/shipping`}>Shipping</NavLink>
             </nav>
             <Route 
-              path='/shop/:itemId/description' 
+              path='/shop/:itemId/description'
               render={props => { 
                   return <ItemDescription item={item} /> 
                 }} 
             />
             <Route 
-              path='/shop/:itemId/shipping' 
-              render={props => { 
-                  return <ItemShipping item={item} /> 
-                }} 
+              path='/shop/:itemId/shipping'
+              render={props => {
+                  return <ItemShipping item={item} />
+                }}
             />
         </div>
     )

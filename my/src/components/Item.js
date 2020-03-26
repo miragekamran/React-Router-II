@@ -1,4 +1,7 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
+import ItemShipping from '../components/ItemShippping';
+import ItemDescription from '../components/ItemDescription';
 
 
 export default function Item(props) {
@@ -18,9 +21,18 @@ export default function Item(props) {
                     <h4>${item.price}</h4>
                 </div>
             </div>
-            <div>
-                <p className="item-description">{item.description}</p>
-            </div>
+            <Route 
+              path='/shop/:itemId/description' 
+              render={props => { 
+                  return <ItemDescription item={item} /> 
+                }} 
+            />
+            <Route 
+              path='/shop/:itemId/shipping' 
+              render={props => { 
+                  return <ItemShipping item={item} /> 
+                }} 
+            />
         </div>
     )
 }

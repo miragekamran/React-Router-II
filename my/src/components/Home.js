@@ -1,6 +1,6 @@
 import React from "react";
 
-function Home() {
+function Home(props) {
   return (
     <div className="home-wrapper">
       <img
@@ -8,7 +8,7 @@ function Home() {
         src="https://www.uncommongoods.com/images/category/fun-fullwidth.jpg"
         alt=""
       />
-      <button className="md-button shop-button">Shop now!</button>
+      <button className="md-button shop-button" onClick={() => {props.history.push('/shop')}}>Shop now!</button>
     </div>
   );
 }
